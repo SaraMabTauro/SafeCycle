@@ -76,7 +76,7 @@ import { useState, useEffect } from "react";
 interface DatoSensor {
   distancia: number;
   cantidadPedaleos: number;
-  velocidad:number;
+  velocidad: number;
   createdAt: Date;
 }
 
@@ -90,7 +90,7 @@ const Historial = () => {
         const userDataString = localStorage.getItem('user');
         if (userDataString) {
           const user = JSON.parse(userDataString);
-          const response = await axios.get(`https://apiusuarios-spkt.onrender.com/api/usersws/${user._id}`);
+          const response = await axios.get(`http://3.218.205.205/api/usersws/${user._id}`);
           setUserData(response.data);
         }
       } catch (error) {
@@ -109,7 +109,7 @@ const Historial = () => {
     <div className="p-6">
       <h2 className="text-2xl font-semibold mb-4">Historial de Rutas</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-      {userData && userData.sensorData.map((datoSensor: DatoSensor, index: number) => (
+        {userData && userData.sensorData.map((datoSensor: DatoSensor, index: number) => (
           <div key={index} className="bg-white rounded-md shadow-md overflow-hidden">
             <div className="px-4 py-3 border-b border-gray-200 flex items-center">
               <FontAwesomeIcon icon={faRoad} className="text-teal-500 mr-2" />
@@ -129,7 +129,7 @@ const Historial = () => {
             </div>
             <div className="px-4 py-3 flex items-center">
               <FontAwesomeIcon icon={faClock} className="text-gray-500 mr-2" />
-              <p className="text-sm">Fecha: {datoSensor.createdAt.toLocaleString()}</p>
+              <p className="text-sm">Fecha: {datoSensor.createdAt ? datoSensor.createdAt.toLocaleString() : 'Fecha no disponible'}</p>
             </div>
           </div>
         ))}

@@ -205,7 +205,7 @@ const Profile = () => {
         if (userDataString) {
           const user = JSON.parse(userDataString);
           console.log("user:", user); // Verificar el objeto del usuario en la consola
-          const response = await axios.get(`https://apiusuarios-spkt.onrender.com/api/usersws/${user._id}`);
+          const response = await axios.get(`http://3.218.205.205/api/usersws/${user._id}`);
           console.log("response:", response.data); // Verificar la respuesta de la solicitud en la consola
           setUserData(response.data);
           setUserStats({

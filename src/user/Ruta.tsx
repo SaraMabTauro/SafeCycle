@@ -18,7 +18,7 @@ const CreateRoute = () => {
   const [fecha, setFecha] = useState(0);
 
   useEffect(() => {
-    const socketInstance = io('https://websocketserver-l5ok.onrender.com');
+    const socketInstance = io('http://52.20.195.195');
 
     socketInstance.on('connect', () => {
       console.log('Connected to WebSocket server');

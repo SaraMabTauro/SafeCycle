@@ -75,7 +75,7 @@ const Comunidad = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get<UserData[]>('https://apiusuarios-spkt.onrender.com/api/usersws/');
+        const response = await axios.get<UserData[]>('http://3.218.205.205/api/usersws/');
         const data = response.data;
 
         // Obtener la cantidad de usuarios actualmente
