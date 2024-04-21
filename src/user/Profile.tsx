@@ -193,6 +193,7 @@ import { LineChart } from '@mui/x-charts/LineChart';
 import GoogleMapComponent from './Maps';
 import axios, { AxiosError } from 'axios';
 
+
 const Profile = () => {
   const [userData, setUserData] = useState<any>(null);
   const [userStats, setUserStats] = useState<any>(null);
